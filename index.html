@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Vision Planner</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="background-globes">
+        <div class="globe globe-1"></div>
+        <div class="globe globe-2"></div>
+        <div class="globe globe-3"></div>
+    </div>
+
+    <div class="app-container">
+        <!-- Progress Bar -->
+        <div class="progress-wrapper">
+            <div class="progress-fill" id="progress-bar"></div>
+        </div>
+
+        <!-- 1. Welcome Page -->
+        <section id="welcome-page" class="view-section active">
+            <div class="glass-panel centered-panel">
+                <h1 class="animate-title">Career Vision Planner</h1>
+                <p id="typing-text" class="typing-effect"></p>
+                <div class="spacer"></div>
+                <button class="btn btn-glow" onclick="nextPage('basic-details-page')">
+                    <i class="fas fa-rocket"></i> Start Your Journey
+                </button>
+
+                <div class="social-proof">
+                    <h3><i class="fas fa-quote-left"></i> Inspiring Journeys</h3>
+                    <div class="review-cards">
+                        <div class="review-card">
+                            <p>"I found my true calling in Design!"</p>
+                            <div class="stars">★★★★★</div>
+                        </div>
+                        <div class="review-card">
+                            <p>"Simple, fast, and clear direction."</p>
+                            <div class="stars">★★★★★</div>
+                        </div>
+                        <div class="review-card">
+                            <p>"The roadmap changed my life."</p>
+                            <div class="stars">★★★★☆</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Basic Details Page -->
+        <section id="basic-details-page" class="view-section">
+            <div class="glass-panel">
+                <h2><i class="fas fa-user-astronaut"></i> Profile Setup</h2>
+                <div class="form-grid">
+                    <div class="input-wrapper">
+                        <label>Full Name</label>
+                        <input type="text" id="user-name" placeholder="John Doe" required>
+                    </div>
+                    <div class="input-wrapper">
+                        <label>Age</label>
+                        <input type="number" id="user-age" placeholder="e.g. 18" required>
+                    </div>
+                    <div class="input-wrapper full-width">
+                        <label>Education Stage</label>
+                        <select id="user-education" required>
+                            <option value="">Select your status...</option>
+                            <option value="High School">High School</option>
+                            <option value="Undergraduate">Undergraduate</option>
+                            <option value="Postgraduate">Postgraduate</option>
+                            <option value="Professional">Working Professional</option>
+                        </select>
+                    </div>
+                    <div class="input-wrapper full-width">
+                        <label>Key Strengths</label>
+                        <input type="text" id="user-skills" placeholder="e.g. Creativity, Mathematics, Leadership">
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn btn-outline" onclick="prevPage('welcome-page')">Back</button>
+                    <button class="btn btn-primary"
+                        onclick="validateAndNext('basic-details-page', 'course-selection-page')">Next Step <i
+                            class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Course Selection Page -->
+        <section id="course-selection-page" class="view-section">
+            <div class="glass-panel">
+                <h2><i class="fas fa-compass"></i> Select Direction</h2>
+                <div class="input-wrapper full-width">
+                    <label>What interests you?</label>
+                    <select id="selected-course" class="big-select" onchange="updateCourseDetails()" required>
+                        <option value="">-- Choose Career Path --</option>
+                        <option value="Engineering">Engineering & Technology</option>
+                        <option value="MBBS">Medical Sciences (MBBS)</option>
+                        <option value="MBA">Business & Management</option>
+                        <option value="Law">Law & Judiciary</option>
+                        <option value="Arts">Creative Arts & Humanities</option>
+                        <option value="Design">UI/UX & Product Design</option>
+                        <option value="DataScience">Data Science & AI</option>
+                        <option value="Pilot">Aviation & Piloting</option>
+                        <option value="Chef">Culinary Arts</option>
+                    </select>
+                </div>
+
+                <div id="course-insight" class="insight-box hidden">
+                    <div class="insight-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Duration: <strong id="duration-text"></strong></span>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="btn btn-outline" onclick="prevPage('basic-details-page')">Back</button>
+                    <button class="btn btn-primary"
+                        onclick="validateAndNext('course-selection-page', 'entrance-exam-page')">Explore Exams <i
+                            class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Entrance Exam Page -->
+        <section id="entrance-exam-page" class="view-section">
+            <div class="glass-panel">
+                <h2><i class="fas fa-pencil-alt"></i> The Gateway</h2>
+                <div class="info-card highlight-card">
+                    <p>To enter the world of <strong id="exam-course-name"></strong>, prepare for:</p>
+                    <h1 id="exam-name" class="neon-text"></h1>
+                    <p id="exam-desc" class="subtext"></p>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn btn-outline" onclick="prevPage('course-selection-page')">Back</button>
+                    <button class="btn btn-primary" onclick="nextPage('institutions-page')">Find Colleges <i
+                            class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Institutions Page -->
+        <section id="institutions-page" class="view-section">
+            <div class="glass-panel">
+                <h2><i class="fas fa-university"></i> Top Institutions</h2>
+                <div class="input-wrapper full-width">
+                    <label>Dream Location</label>
+                    <input type="text" id="institution-location" placeholder="e.g. Boston, London, Bangalore"
+                        oninput="debounceInstSearch()">
+                </div>
+                <div id="institution-list" class="dynamic-grid">
+                    <!-- JS Injected -->
+                </div>
+                <div class="action-buttons">
+                    <button class="btn btn-outline" onclick="prevPage('entrance-exam-page')">Back</button>
+                    <button class="btn btn-primary"
+                        onclick="validateAndNext('institutions-page', 'job-opportunities-page')">See Jobs <i
+                            class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Job Opportunities Page -->
+        <section id="job-opportunities-page" class="view-section">
+            <div class="glass-panel">
+                <h2><i class="fas fa-briefcase"></i> Career Scope</h2>
+                <p>What you could become:</p>
+                <div id="jobs-container" class="cards-horizontal">
+                    <!-- JS Injected -->
+                </div>
+                <div class="action-buttons">
+                    <button class="btn btn-outline" onclick="prevPage('institutions-page')">Back</button>
+                    <button class="btn btn-primary" onclick="nextPage('skills-needed-page')">Required Skills <i
+                            class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Skills Needed Page -->
+        <section id="skills-needed-page" class="view-section">
+            <div class="glass-panel">
+                <h2><i class="fas fa-brain"></i> Skill Stack</h2>
+                <p>Build these to succeed:</p>
+                <div id="skills-container" class="pill-container">
+                    <!-- JS Injected -->
+                </div>
+                <div class="action-buttons">
+                    <button class="btn btn-outline" onclick="prevPage('job-opportunities-page')">Back</button>
+                    <button class="btn btn-primary" onclick="nextPage('workplace-page')">Work Life <i
+                            class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Workplace Page -->
+        <section id="workplace-page" class="view-section">
+            <div class="glass-panel">
+                <h2><i class="fas fa-building"></i> Future Workspace</h2>
+                <div id="workplace-list" class="cards-grid">
+                    <!-- JS Injected -->
+                </div>
+                <div class="newsletter-box">
+                    <label>Stay Updated (Optional)</label>
+                    <input type="email" id="user-email" placeholder="you@vision.com">
+                </div>
+                <div class="action-buttons">
+                    <button class="btn btn-outline" onclick="prevPage('skills-needed-page')">Back</button>
+                    <button class="btn btn-primary" onclick="nextPage('review-page')">Review Plan <i
+                            class="fas fa-clipboard-check"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. Review Page -->
+        <section id="review-page" class="view-section">
+            <div class="glass-panel wide-panel">
+                <h2><i class="fas fa-check-circle"></i> Verify Your Vision</h2>
+                <div class="review-dashboard">
+                    <div class="review-stat">
+                        <small>Name</small>
+                        <strong id="review-name"></strong>
+                    </div>
+                    <div class="review-stat">
+                        <small>Path</small>
+                        <strong id="review-course"></strong>
+                    </div>
+                    <div class="review-stat">
+                        <small>Target</small>
+                        <strong id="review-exam"></strong>
+                    </div>
+                    <div class="review-stat">
+                        <small>Location</small>
+                        <strong id="review-location"></strong>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn btn-outline" onclick="prevPage('workplace-page')">Modify</button>
+                    <button class="btn btn-success-glow" onclick="nextPage('happiness-check-page')">Confirm Vision <i
+                            class="fas fa-check"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. Happiness Check Page -->
+        <section id="happiness-check-page" class="view-section">
+            <div class="glass-panel small-panel">
+                <h2><i class="fas fa-heart"></i> Gut Check</h2>
+                <p>Does this future make you excited?</p>
+                <div class="binary-choice">
+                    <button class="btn btn-yes" onclick="finishPlanner()">YES! I love it.</button>
+                    <button class="btn btn-no" onclick="resetToCourse()">No, let's rethink.</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 11. Summary Page -->
+        <section id="summary-page" class="view-section">
+            <div class="glass-panel summary-panel">
+                <canvas id="confetti-canvas"></canvas>
+                <div class="medal-icon"><i class="fas fa-award"></i></div>
+                <h1>Career Vision Locked!</h1>
+                <h3>Congratulations, <span id="final-name" class="highlight-name"></span></h3>
+
+                <div class="vision-card">
+                    <div class="vision-header">Future <span id="final-title"></span></div>
+                    <div class="vision-body">
+                        <p><strong>Exam:</strong> <span id="final-exam"></span></p>
+                        <p><strong>Top Workplace:</strong> <span id="final-workplace"></span></p>
+                    </div>
+                    <div class="vision-footer">
+                        "Your future is created by what you do today."
+                    </div>
+                </div>
+
+                <div class="action-buttons no-print">
+                    <button class="btn btn-primary" onclick="window.print()">Print This Card <i
+                            class="fas fa-print"></i></button>
+                    <button class="btn btn-outline" onclick="location.reload()">Start New <i
+                            class="fas fa-redo"></i></button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
