@@ -6,23 +6,22 @@
 
 ## Basic Details
 
-### Team Name: [Name]
+### indivitual 
 
 ### Team Members
-- Member 1: [Name] - [College]
-- Member 2: [Name] - [College]
-
+- Member 1: fathima hannah.m - pptm arts and science college
+- 
 ### Hosted Project Link
-[mention your project hosted link here]
+https://hannah0367.github.io/tink-her-hack-temp/
 
 ### Project Description
-[2-3 lines about what your project does]
+the project all about the career nowadays our this generation facing problem is what is next so for that i contributing some ideas for it like the solutions that is all about the project by giving our personal details 
 
 ### The Problem statement
-[What problem are you solving?]
+[after our higher studies or ug,pg what we do next or how we do what we need to select with our handed skills and what all need to develop]
 
 ### The Solution
-[How are you solving it?]
+[the site with some options that we starting with oru education level and our intrest and skill at last we can find the solution by our input ]
 
 ---
 
@@ -31,10 +30,8 @@
 ### Technologies/Components Used
 
 **For Software:**
-- Languages used: [e.g., JavaScript, Python, Java]
-- Frameworks used: [e.g., React, Django, Spring Boot]
-- Libraries used: [e.g., axios, pandas, JUnit]
-- Tools used: [e.g., VS Code, Git, Docker]
+- Languages used: [e.g., JavaScript,]
+- Tools used: [e.g., VS Code, Git, ]
 
 **For Hardware:**
 - Main components: [List main components]
@@ -46,10 +43,9 @@
 ## Features
 
 List the key features of your project:
-- Feature 1: [Description]
-- Feature 2: [Description]
-- Feature 3: [Description]
-- Feature 4: [Description]
+- Feature 1: solution for who are questioning in career
+- Feature 2: they can see the future in it
+- Feature 3: we can get jobs by our instrest and skills
 
 ---
 
@@ -58,22 +54,14 @@ List the key features of your project:
 ### For Software:
 
 #### Installation
-```bash
-[Installation commands - e.g., npm install, pip install -r requirements.txt]
+
 ```
 
 #### Run
 ```bash
-[Run commands - e.g., npm start, python app.py]
+start index.html
 ```
 
-### For Hardware:
-
-#### Components Required
-[List all components needed with specifications]
-
-#### Circuit Setup
-[Explain how to set up the circuit]
 
 ---
 
@@ -83,14 +71,14 @@ List the key features of your project:
 
 #### Screenshots (Add at least 3)
 
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
+!https://github.com/hannah0367/tink-her-hack-temp/blob/main/welcoming%20page).png
+the welcoming page of site that starting our journey with amzing frames
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
+!https://github.com/hannah0367/tink-her-hack-temp/blob/main/personal%20info.png
+the page of personal info that giving our personal information like name age skills
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
+!https://github.com/hannah0367/tink-her-hack-temp/blob/main/end%20screen
+the end screen of site that showing what gets result for giving input the last card that what we going to be in future
 
 #### Diagrams
 
@@ -105,16 +93,6 @@ List the key features of your project:
 *Add caption explaining your workflow*
 
 ---
-
-### For Hardware:
-
-#### Schematic & Circuit
-
-![Circuit](Add your circuit diagram here)
-*Add caption explaining connections*
-
-![Schematic](Add your schematic diagram here)
-*Add caption explaining the schematic*
 
 #### Build Photos
 
